@@ -93,9 +93,21 @@ public class Test extends BaseTest {
 
     }
 
+    @org.testng.annotations.Test
+    public void verifyReviewIsSent() throws InterruptedException {
+        Products products = new Products(driver);
+        products.clickProductButton();
+        products.verifyPageProducts();
+        products.clickViewProduct();
+        products.verifyYourReviewIsVisible();
+        products.reviewContent("Claudiu Iacob", "ann0x98@gmail.com", "Best product ever");
+        products.clickSubmit();
+        products.alert_succes_is_displayed();
+        Thread.sleep(4000);
+
+    }
+
 
 }
 
 
-
-// un comentariu nou

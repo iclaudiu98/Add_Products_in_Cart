@@ -106,6 +106,15 @@ public class Test extends BaseTest {
         Thread.sleep(4000);
 
     }
+    @org.testng.annotations.Test
+    public void RegisterAndDeleteAccount(){
+        HomePage homePage  = new HomePage(driver);
+        System.out.println(homePage.verifyHomePage());
+        SignUpLogin signUpLogin = new SignUpLogin(driver);
+        signUpLogin.clickSignUpSignIn();
+
+    }
+
 
 
 }

@@ -107,11 +107,27 @@ public class Test extends BaseTest {
 
     }
     @org.testng.annotations.Test
-    public void RegisterAndDeleteAccount(){
+    public void RegisterAndDeleteAccount() throws InterruptedException {
         HomePage homePage  = new HomePage(driver);
         System.out.println(homePage.verifyHomePage());
         SignUpLogin signUpLogin = new SignUpLogin(driver);
         signUpLogin.clickSignUpSignIn();
+        signUpLogin.signUpText();
+        signUpLogin.signUpBasicInfo("Claudiu", "iacobclaudiu1998@gmail.com");
+        signUpLogin.clickSignUp();
+        signUpLogin.verifySignUpIsPresent();
+        signUpLogin.completeInfoSignUp(0,"Claudiu", "parola98", 15, 7,"1998");
+        signUpLogin.selectCheckBoxes();
+        signUpLogin.completeFirstName("Claudiu");
+        signUpLogin.completeLastName("Iacob");
+        signUpLogin.completeCompany("Testare SRL");
+        signUpLogin.completeAdress("Iasi, Copou, Romania");
+        signUpLogin.selectCountry("Canada");
+        signUpLogin.completeCityandState("Iasi", "Romania");
+        signUpLogin.phoneNumber("0723715100");
+        signUpLogin.completeZipCode("803333");
+        signUpLogin.clickCreateAccount();
+        Thread.sleep(5000);
 
     }
 

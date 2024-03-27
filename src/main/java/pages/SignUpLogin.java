@@ -155,6 +155,30 @@ public class SignUpLogin {
         contiue.click();
     }
 
+    public void verifyLoggedUser(){
+        WebElement loggedUser = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[10]/a"));
+        String mesaj= loggedUser.getText();
+        System.out.println(mesaj);
+        loggedUser.isDisplayed();
+    }
+
+    public void deleteAccount(){
+        WebElement deleteAcc = driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[5]/a"));
+        deleteAcc.click();
+    }
+
+    public void deleteConfirmation(){
+        WebElement deleteMessage = driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div/h2/b"));
+        System.out.println(deleteMessage.getText());
+        deleteMessage.isDisplayed();
+        WebElement continueDelete = driver.findElement(By.cssSelector("a.btn.btn-primary"));
+        continueDelete.click();
+    }
+
+
+
+
+
 
 
 

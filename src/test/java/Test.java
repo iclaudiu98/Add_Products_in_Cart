@@ -113,7 +113,7 @@ public class Test extends BaseTest {
         SignUpLogin signUpLogin = new SignUpLogin(driver);
         signUpLogin.clickSignUpSignIn();
         signUpLogin.signUpText();
-        signUpLogin.signUpBasicInfo("Claudiu", "iacobclaudiu1998@gmail.com");
+        signUpLogin.signUpBasicInfo("Claudiu", "iacobclaudiu1811@gmail.com");
         signUpLogin.clickSignUp();
         signUpLogin.verifySignUpIsPresent();
         signUpLogin.completeInfoSignUp(0,"Claudiu", "parola98", 15, 7,"1998");
@@ -127,6 +127,11 @@ public class Test extends BaseTest {
         signUpLogin.phoneNumber("0723715100");
         signUpLogin.completeZipCode("803333");
         signUpLogin.clickCreateAccount();
+        signUpLogin.verifyAccountCreated();
+        signUpLogin.clickContinuebutton();
+        signUpLogin.verifyLoggedUser();
+        signUpLogin.deleteAccount();
+        signUpLogin.deleteConfirmation();
         Thread.sleep(5000);
 
     }
